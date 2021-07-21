@@ -102,3 +102,46 @@ function robotAmoroso() {
   document.getElementById("entrada").value = "";
 }
 
+let color = 0;
+
+function colores() {
+
+  if (color == 0){
+    document.getElementById("fondo").style.backgroundColor = "#000";
+    document.getElementById("titulo").style.color = "#FFF";
+    document.getElementById("respuesta").style.color = "#FFF";
+    document.getElementById("descripcion").style.color = "#FFF";
+    color = 1;
+  }
+  else if (color == 1){
+    document.getElementById("fondo").style.backgroundColor = "#e40303";
+    document.getElementById("titulo").style.color = "#000";
+    document.getElementById("respuesta").style.color = "#000";
+    document.getElementById("descripcion").style.color = "#000";
+    color = 2;
+  }
+  else if (color == 2){
+    document.getElementById("fondo").style.backgroundColor = "#ff8c00";
+    color = 3;
+  }
+  else if (color == 3){
+    document.getElementById("fondo").style.backgroundColor = "#ffed00";
+    color = 4;
+  }
+  else if (color == 4){
+    document.getElementById("fondo").style.backgroundColor = "#008026";
+    color = 5;
+  }
+  else if (color == 5){
+    document.getElementById("fondo").style.backgroundColor = "#004dff";
+    color = 6;
+  }
+  else if (color == 6){
+    document.getElementById("fondo").style.backgroundColor = "#750787";
+    color = 7;
+  }
+  else if (color == 7){
+    document.getElementById("fondo").style.backgroundColor = "#ffb3d9";
+    color = 0;
+  }
+}
