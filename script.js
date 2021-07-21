@@ -20,7 +20,8 @@ const despedida = [`Hasta luego ${nombre} ten cuidaico por ahi`,`Hasta luego ${n
                     `Venga hasta luego ${nombre} si necesitas algo ya sabes le partimos las piernas a quien te haga algo`];                        
 
 const meLlamo = [`Me has dicho que te llamas ${nombre} y me parece un nombre muy bonito`,
-                  `Te llamas ${nombre} y te quiero mucho`,`Tu nombre es ${nombre}`];
+                  `Te llamas ${nombre} y te quiero mucho`,`Tu nombre es ${nombre}`,
+                    `${nombre.toUpperCase()}!!`];
 
 const respuestaQtal = [`Muy bien ${nombre} muy feliz de hablar contigo`,`Yo estoy bien y tu ${nombre}?`];
 
@@ -39,7 +40,8 @@ return nombreCadena[Math.floor(Math.random() * nombreCadena.length)];
 
 function robotAmoroso() {
   let mensaje = document.getElementById("entrada").value;
-  
+      mensaje = mensaje.toLowerCase()
+
   if (mensaje.includes("me quieres?") || 
       mensaje.includes("seguro?") ||
       mensaje.includes("quiereme") ||
@@ -49,34 +51,27 @@ function robotAmoroso() {
   }
   else if (mensaje.includes("perdón") ||
             mensaje.includes("perdon") ||
-            mensaje.includes("lo siento") ||
-            mensaje.includes("Lo siento") ||
-            mensaje.includes("Perdon") ||
-            mensaje.includes("Perdón"))
+            mensaje.includes("lo siento"))
   {
     reply = cadenaRandom(respuestaPerdon);
   }
   else if (mensaje.includes("te odio") ||
-            mensaje.includes("Te odio") ||
             mensaje.includes("que te follen") ||
-            mensaje.includes("Que te follen") ||
             mensaje.includes("gilipollas") ||
-            mensaje.includes("Gilipollas") ||
-            mensaje.includes("Tus muertos") ||
             mensaje.includes("tus muertos"))
   {
     reply = cadenaRandom(respuestaOdio);
   }
-  else if (mensaje.includes("me llamo?"))
+  else if (mensaje.includes("me llamo?") ||
+            mensaje.includes("como me llamo") ||
+            mensaje.includes("quien soy") ||
+            mensaje.includes("quién soy") ||
+            mensaje.includes("cómo me llamo"))
   {
     reply = cadenaRandom(meLlamo)
   }
   else if ( mensaje.includes("qué tal") ||
             mensaje.includes("que tal") ||
-            mensaje.includes("Que tal") ||
-            mensaje.includes("Qué tal") ||
-            mensaje.includes("Cómo estas") ||
-            mensaje.includes("Como estas") ||
             mensaje.includes("cómo estas") ||
             mensaje.includes("como estas"))
   {
@@ -91,10 +86,8 @@ function robotAmoroso() {
   {
     reply = cadenaRandom(despedida)
   }
-  else if (mensaje.includes("Hola") ||
-            mensaje.includes("hola") ||
-            mensaje.includes("buenas") ||
-            mensaje.includes("Buenas"))
+  else if ( mensaje.includes("hola") ||
+            mensaje.includes("buenas"))
   {
     reply = cadenaRandom(respuestaHola);
   }
